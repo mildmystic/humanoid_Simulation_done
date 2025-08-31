@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>humannew</name>
+  <version>0.0.0</version>
+  <description>NAO humanoid simulation package for Gazebo Harmonic with ROS 2 Humble</description>
+  <maintainer email="mittalashu878@gmail.com">ashish</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>  <!-- Changed from ament_cmake -->
+
+  <depend>rclpy</depend>  <!-- For Python ROS 2 nodes -->
+  <depend>std_msgs</depend>  <!-- For Float64 messages in the node -->
+  <depend>launch_ros</depend>  <!-- For launch files -->
+  <depend>gz_ros2_control</depend>  <!-- For Gazebo-ROS integration -->
+  <depend>sensor_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>  <!-- Helpful for image handling -->
+  <depend>controller_manager</depend>  <!-- For loading controllers -->
+  <depend>ros_gz_bridge</depend>  <!-- For bridging Ignition topics to ROS2 -->
+  <depend>ros_gz_sim</depend>     <!-- For launches -->
+  <depend>ros_gz_interfaces</depend>
+
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>  <!-- Changed from ament_cmake -->
+  </export>
+</package>
+  <!-- <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend> -->

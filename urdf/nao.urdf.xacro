@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<robot name="Nao" xmlns:xacro="http://ros.org/wiki/xacro">
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gz_hardware_plugins/GzSimSystem</plugin>
+    </hardware>
+    <joint name="HeadYaw">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="HeadPitch">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="LShoulderPitch">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="LShoulderRoll">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="LElbowYaw">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="LElbowRoll">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="LWristYaw">
+      <command_interface name="position"/>
+      <state_interface name="position"/>
+    </joint>
+  </ros2_control>
+  <link name="Torso"/>
+  <link name="Neck"/>
+  <link name="Head"/>
+  <link name="LShoulder"/>
+  <link name="LBicep"/>
+  <link name="LElbow"/>
+  <link name="LForeArm"/>
+  <link name="LWrist"/>
+  <joint name="HeadYaw" type="revolute">
+    <parent link="Torso"/>
+    <child link="Neck"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.08567" upper="2.08567"/>
+  </joint>
+  <joint name="HeadPitch" type="revolute">
+    <parent link="Neck"/>
+    <child link="Head"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.671952" upper="0.514872"/>
+  </joint>
+  <joint name="LShoulderPitch" type="revolute">
+    <parent link="Torso"/>
+    <child link="LShoulder"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.0857" upper="2.0857"/>
+  </joint>
+  <joint name="LShoulderRoll" type="revolute">
+    <parent link="LShoulder"/>
+    <child link="LBicep"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.314159" upper="1.32645"/>
+  </joint>
+  <joint name="LElbowYaw" type="revolute">
+    <parent link="LBicep"/>
+    <child link="LElbow"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.08567" upper="2.08567"/>
+  </joint>
+  <joint name="LElbowRoll" type="revolute">
+    <parent link="LElbow"/>
+    <child link="LForeArm"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.54462" upper="-0.0349066"/>
+  </joint>
+  <joint name="LWristYaw" type="revolute">
+    <parent link="LForeArm"/>
+    <child link="LWrist"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.82387" upper="1.82387"/>
+  </joint>
+</robot>

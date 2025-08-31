@@ -1,0 +1,13 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+    joint_position_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+    joints:
+      - HeadYaw
+      - HeadPitch
+      - LShoulderPitch
+      - LShoulderRoll
+      - LElbowYaw
+      - LElbowRoll
+      - LWristYaw
